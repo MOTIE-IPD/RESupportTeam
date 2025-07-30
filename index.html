@@ -2,91 +2,73 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>산업통상자원부 실물경제지원반</title>
+
+  <!-- Noto Sans KR 웹폰트 불러오기 -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- 동글체 웹폰트 불러오기 -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    /* 기본 스타일 및 배경 */
+    /* ─── 기본 레이아웃 ───────────────────────────────────────── */
     body {
       margin: 0;
-      padding: 1.25rem;
+      padding: 0;
       font-family: Arial, sans-serif;
-      background-image: url('images/gov-building.jpg');
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      position: relative;
+      background-color: #f9f9f9;
       color: #222;
       text-align: center;
     }
 
-    /* 어두운 오버레이 */
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.15);
-      pointer-events: none;
-      z-index: 0;
+    /* ─── 상단 인트로 섹션 ───────────────────────────────────── */
+    .intro {
+      background-color: #fff;
+      padding: 2rem 1.25rem;
     }
-
-    /* 모든 콘텐츠를 오버레이 위로 */
-    main, header, .box-container, .link-homepage {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* 로고 */
-    .logo {
+    .intro .logo {
       max-width: 12.5rem;
       width: 100%;
       height: auto;
       margin: 0 auto;
       display: block;
     }
-
-    /* 메인 안내 문구 */
-    .main-message {
-      font-size: 1.75rem;
+    .intro .main-message {
+      font-size: 2rem;
       line-height: 1.3;
-      margin: 1.875rem 0 0.625rem;
+      margin-top: 1.5rem;
+      font-family: 'Dongle', sans-serif;
+      font-weight: 400;
     }
-
-    @media (min-width: 601px) and (max-width: 900px) {
-      .main-message {
+    @media (max-width: 600px) {
+      .intro .main-message {
         font-size: 1.5rem;
       }
     }
 
-    @media (max-width: 600px) {
-      .main-message {
-        font-size: 1.1rem;
-      }
+    /* ─── 콘텐츠 섹션 (배경 이미지) ───────────────────────────── */
+    .content {
+      background-image: url('images/bg-clean.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 2rem 1.25rem;
     }
 
-    /* 홈페이지 링크 */
-    .link-homepage a {
-      font-size: 1rem;
-      color: #0072bc;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-    }
-    .link-homepage a:hover {
-      text-decoration: underline;
-    }
-
-    /* 박스 레이아웃 */
     .box-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.25rem;
-      margin-top: 2.5rem;
     }
-
     .box {
       text-decoration: none;
       color: #000;
-      font-weight: bold;
       transition: transform 0.2s;
     }
     .box img {
@@ -94,59 +76,150 @@
       height: auto;
       border-radius: 8px;
       display: block;
-      loading: lazy;
     }
     .box span {
       display: block;
       margin-top: 0.5rem;
-      font-size: 1rem;
+      font-size: 1.5rem;           /* 글씨 크기 확대 */
+      font-family: 'Dongle', sans-serif;
+      font-weight: 700;
     }
     .box:hover {
       transform: translateY(-5px);
     }
 
-    /* 모바일 반응형: 배경 제거 및 박스 조정 */
+    .link-homepage {
+      margin-top: 2rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: inline-block;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+    }
+    .link-homepage a {
+      color: #0072bc;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .link-homepage a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 600px) {
-      body {
+      .content {
         background-image: none;
         background-color: #f9f9f9;
       }
-      .box {
-        width: 90%;
-        margin: 0 auto;
-      }
       .box img {
         border-radius: 4px;
+      }
+      .box span {
+        font-size: 1.2rem;         /* 모바일용 폰트 크기 조정 */
+      }
+      .link-homepage {
+        background-color: #fff;
+      }
+    }
+
+    /* ─── 푸터 섹션 ──────────────────────────────────────────── */
+    footer.footer {
+      background-color: #fff;
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+      color: #222;
+    }
+    .footer-left, .footer-right {
+      max-width: 48%;
+    }
+    .footer-left p, .footer-right p {
+      margin: 0;
+    }
+    .footer-left p.address {
+      font-size: 0.875rem;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .footer-left p.copyright {
+      font-size: 0.825rem;
+      margin-top: 0.25rem;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .footer-right {
+      text-align: right;
+      color: #888;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .footer-right p {
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 600px) {
+      footer.footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .footer-left, .footer-right {
+        max-width: 100%;
+      }
+      .footer-right {
+        margin-top: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
+
+  <!-- 상단 인트로 -->
+  <header class="intro">
     <img src="images/motie logo.jpg" alt="산업통상자원부 로고" class="logo" />
     <div class="main-message">
-      안녕하세요 산업통상자원부 산업정책과입니다.
+      안녕하세요 산업통상자원부 실물경제지원반입니다
     </div>
+  </header>
+
+  <!-- 콘텐츠 (박스 + 링크) -->
+  <section class="content">
+    <div class="box-container">
+      <a href="performance.html" class="box">
+        <img src="images/pic01.jpg" alt="주요 실적 및 현황" loading="lazy" />
+        <span>주요 실적 및 현황</span>
+      </a>
+      <a href="#" class="box">
+        <img src="images/pic02.jpg" alt="기업 투자 애로 접수" loading="lazy" />
+        <span>기업 투자 애로 접수</span>
+      </a>
+      <a href="#" class="box">
+        <img src="images/pic05.jpg" alt="해결 투자 애로 피드백" loading="lazy" />
+        <span>해결 투자 애로 피드백</span>
+      </a>
+    </div>
+
     <div class="link-homepage">
       <a href="http://www.motie.go.kr" target="_blank">
         산업통상자원부 홈페이지 바로가기
       </a>
     </div>
-  </header>
+  </section>
 
-  <main class="box-container">
-    <a href="performance.html" class="box">
-      <img src="images/pic01.jpg" alt="주요 실적 및 현황" loading="lazy" />
-      <span>주요 실적 및 현황</span>
-    </a>
-    <a href="#" class="box">
-      <img src="images/pic02.jpg" alt="기업 투자 애로 접수" loading="lazy" />
-      <span>기업 투자 애로 접수</span>
-    </a>
-    <a href="#" class="box">
-      <img src="images/pic05.jpg" alt="해결 투자 애로 피드백" loading="lazy" />
-      <span>해결 투자 애로 피드백</span>
-    </a>
-  </main>
+  <!-- 푸터 (하단 흰 배경) -->
+  <footer class="footer">
+    <div class="footer-left">
+      <p class="address">
+        30118 세종특별자치시 한누리대로 402 13동 산업통상자원부 산업정책과
+      </p>
+      <p class="copyright">
+        Copyright©2025 산업통상자원부. All Rights Reserved.
+      </p>
+    </div>
+    <div class="footer-right">
+      <p>Designed by silverkrystal</p>
+      <p>krystal24@korea.kr</p>
+      <p>044-203-4239</p>
+    </div>
+  </footer>
+
 </body>
 </html>
+```
