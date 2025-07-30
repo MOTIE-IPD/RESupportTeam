@@ -22,8 +22,10 @@
       display: block;
     }
 
+    /* 메인 안내 문구: clamp를 이용한 반응형 폰트 */
     .main-message {
-      font-size: 2rem;
+      font-size: clamp(1.25rem, 5vw, 2rem);
+      line-height: 1.3;
       margin: 1.875rem 0 0.625rem;
       color: #222;
     }
@@ -72,12 +74,6 @@
 
     /* 모바일(≤600px) */
     @media (max-width: 600px) {
-      .main-message {
-        font-size: 1.5rem;
-      }
-      .box-container {
-        grid-template-columns: 1fr;
-      }
       .box {
         width: 90%;
         margin: 0 auto;
@@ -114,15 +110,15 @@
   <!-- 박스 컨테이너 -->
   <div class="box-container">
     <a href="performance.html" class="box">
-      <img src="images/pic01.jpg" alt="주요 실적 및 현황" />
+      <img src="images/pic01.jpg" alt="주요 실적 및 현황" loading="lazy" />
       <span>주요 실적 및 현황</span>
     </a>
     <a href="#" class="box">
-      <img src="images/pic02.jpg" alt="기업 투자 애로 접수" />
+      <img src="images/pic02.jpg" alt="기업 투자 애로 접수" loading="lazy" />
       <span>기업 투자 애로 접수</span>
     </a>
     <a href="#" class="box">
-      <img src="images/pic05.jpg" alt="해결 투자 애로 피드백" />
+      <img src="images/pic05.jpg" alt="해결 투자 애로 피드백" loading="lazy" />
       <span>해결 투자 애로 피드백</span>
     </a>
   </div>
