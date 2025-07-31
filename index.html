@@ -108,6 +108,12 @@
       width: 100%;              /* 화면 너비에 맞춰 늘리기 */
       max-width: 360px;         /* 최대 너비 설정(Optional) */
       margin: 0 auto;           /* 가운데 정렬 */
+      transition: transform 0.15s ease;
+          /* iOS에서 터치 하이라이트 해제 (선택) */
+      -webkit-tap-highlight-color: transparent;
+    }
+    .box:active {
+      transform: scale(0.96);
     }
     }
 
