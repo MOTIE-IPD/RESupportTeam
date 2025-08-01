@@ -3327,3 +3327,84 @@ input, select, textarea {
 			}
 
 		}
+		/*──────────────────────────────────────
+  1) 메뉴 슬라이드 방향을 → 오른쪽에서 나오도록 변경
+──────────────────────────────────────*/
+#menu {
+  left: auto;             /* 왼쪽 위치 해제 */
+  right: -250px;          /* 화면 밖 오른쪽으로 숨김 */
+  width: 250px;
+  background: #0072bc;    /* 메뉴 백그라운드(Phantom 폼 색상) */
+  transition: right 0.5s ease;
+}
+
+body.is-menu-visible #menu {
+  right: 0;               /* 메뉴 보이기 */
+}
+
+body.is-menu-visible #wrapper {
+  /* 메뉴가 열린 만큼 본문을 왼쪽으로 민다 */
+  transform: translateX(-250px);
+  transition: transform 0.5s ease;
+}
+
+/* 닫기 버튼(✕)을 메뉴 오른쪽 위에 붙이고 싶으면, 아래와 같이 추가 */
+/*
+#menu .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+*/
+
+/*──────────────────────────────────────
+  2) 컬러 커스터마이징 (Phantom 폼 색상 계열)
+──────────────────────────────────────*/
+/* 헤더 배경, 하단 경계선 */
+#header {
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 헤더 안 a, 메뉴 토글 버튼 */
+#header a,
+#header nav ul li a {
+  color: #0072bc;
+  font-weight: 500;
+}
+#header a:hover {
+  color: #005b97;
+}
+
+/* 메뉴 내부 링크 */
+#menu ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+#menu ul li a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* 버튼, 액션 색상 (필요시) */
+input[type="submit"].primary,
+.button.primary {
+  background: #0072bc;
+  border-color: #0072bc;
+  color: #ffffff;
+}
+input[type="submit"].primary:hover,
+.button.primary:hover {
+  background: #005b97;
+  border-color: #005b97;
+}
+
+/* 링크 앵커 색상 */
+a {
+  color: #0072bc;
+}
+a:hover {
+  color: #005b97;
+}

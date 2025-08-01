@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>주요 실적 및 현황 | 산업통상자원부 실물경제지원반</title>
+
   <style>
     /* 기본 레이아웃 */
     body {
@@ -16,19 +17,36 @@
     }
     a { text-decoration: none; color: inherit; }
     header {
+      max-width: 1000px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 20px 0;
+      background-color: #fff;
     }
-    header img {
+    header .branding {
+      display: flex;
+      align-items: center;
+    }
+    header .branding img {
       max-height: 50px;
-      margin-right: 15px;
+      margin-right: 10px;
     }
     header h1 {
       font-size: 1.5rem;
       margin: 0;
     }
+
+
+    /* main / footer 기본 */
     main { max-width: 1000px; margin: 0 auto; }
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
 
     /* 섹션 타이틀 */
     .section-title {
@@ -60,13 +78,11 @@
       margin-bottom: 5px;
     }
 
-    /* 테이블 래퍼 (가로 스크롤) */
+    /* 테이블 스타일 */
     .table-wrapper {
       overflow-x: auto;
       margin-bottom: 20px;
     }
-
-    /* 테이블 공통: 고정 레이아웃 & 동일 칸 너비 */
     table {
       width: 100%;
       table-layout: fixed;
@@ -85,7 +101,7 @@
       font-weight: 500;
     }
 
-    /* 탭 스타일 (연도별) */
+    /* 탭 스타일 */
     .tabs {
       display: flex;
       gap: 10px;
@@ -107,15 +123,7 @@
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
-    /* 푸터 */
-    footer {
-      text-align: center;
-      padding: 20px 0;
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    /* 반응형: 모바일 최적화 */
+    /* 모바일 대응 */
     @media (max-width: 600px) {
       body { padding: 0 10px; }
       header h1 { font-size: 1.3rem; }
@@ -131,15 +139,18 @@
 </head>
 
 <body>
+  <!-- 1) Header -->
   <header>
-    <a href="index.html">
-      <img src="images/motie logo.jpg" alt="산업통상자원부 로고" />
-    </a>
-    <h1>주요 실적 및 현황</h1>
-  </header>
+    <div class="branding">
+      <a href="index.html">
+        <img src="images/motie logo.jpg" alt="산업통상자원부 로고" />
+      </a>
+      <h1>주요 실적 및 현황</h1>
+    </div>
+  </header>  
 
+  <!-- 3) Main Content -->
   <main>
-    <!-- 1. 요약 카드 -->
     <div class="section-title">📈 개요</div>
     <div class="summary">
       <div class="card">
@@ -152,134 +163,91 @@
       </div>
     </div>
 
-    <!-- 2. 전체 현황 테이블 -->
     <div class="section-title">📊 전체 현황 (누계)</div>
     <div class="table-wrapper">
       <table>
         <thead>
           <tr>
-            <th>구분</th>
-            <th>발굴</th>
-            <th>해결 완료</th>
-            <th>해결 확정</th>
-            <th>진행중</th>
-            <th>종결</th>
+            <th>구분</th><th>발굴</th><th>해결 완료</th>
+            <th>해결 확정</th><th>진행중</th><th>종결</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>건수</td>
-            <td>127</td>
-            <td>61</td>
-            <td>11</td>
-            <td>14</td>
-            <td>41</td>
+            <td>건수</td><td>127</td><td>61</td>
+            <td>11</td><td>14</td><td>41</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- 3. 연도별 실적 -->
     <div class="section-title">🗓 연도별 실적</div>
     <div class="tabs">
       <button class="active" data-tab="y23">2023</button>
       <button data-tab="y24">2024</button>
       <button data-tab="y25">2025</button>
     </div>
-
     <div id="y23" class="tab-content active">
       <div class="table-wrapper">
         <table>
           <thead>
             <tr>
-              <th>구분</th>
-              <th>발굴</th>
-              <th>해결 완료</th>
-              <th>해결 확정</th>
-              <th>진행중</th>
-              <th>종결</th>
+              <th>구분</th><th>발굴</th><th>해결 완료</th>
+              <th>해결 확정</th><th>진행중</th><th>종결</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>건수</td>
-              <td>65</td>
-              <td>38</td>
-              <td>1</td>
-              <td>1</td>
-              <td>25</td>
+              <td>건수</td><td>65</td><td>38</td>
+              <td>1</td><td>1</td><td>25</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-
     <div id="y24" class="tab-content">
       <div class="table-wrapper">
         <table>
           <thead>
             <tr>
-              <th>구분</th>
-              <th>발굴</th>
-              <th>해결 완료</th>
-              <th>해결 확정</th>
-              <th>진행중</th>
-              <th>종결</th>
+              <th>구분</th><th>발굴</th><th>해결 완료</th>
+              <th>해결 확정</th><th>진행중</th><th>종결</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>건수</td>
-              <td>40</td>
-              <td>16</td>
-              <td>6</td>
-              <td>4</td>
-              <td>14</td>
+              <td>건수</td><td>40</td><td>16</td>
+              <td>6</td><td>4</td><td>14</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-
     <div id="y25" class="tab-content">
       <div class="table-wrapper">
         <table>
           <thead>
             <tr>
-              <th>구분</th>
-              <th>발굴</th>
-              <th>해결 완료</th>
-              <th>해결 확정</th>
-              <th>진행중</th>
-              <th>종결</th>
+              <th>구분</th><th>발굴</th><th>해결 완료</th>
+              <th>해결 확정</th><th>진행중</th><th>종결</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>건수</td>
-              <td>22</td>
-              <td>7</td>
-              <td>4</td>
-              <td>9</td>
-              <td>2</td>
+              <td>건수</td><td>22</td><td>7</td>
+              <td>4</td><td>9</td><td>2</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <!-- 4. 접수현황 분석 -->
     <div class="section-title">🔎 접수현황 분석</div>
 
     <h4>지역별 접수현황</h4>
     <div class="table-wrapper">
       <table>
-        <thead>
-          <tr>
-            <th>지역</th>
-            <th>건수</th>
-          </tr>
-        </thead>
+        <thead><tr><th>지역</th><th>건수</th></tr></thead>
         <tbody>
           <tr><td>서울</td><td>11</td></tr>
           <tr><td>경기</td><td>32</td></tr>
@@ -303,12 +271,7 @@
     <h4>업종별 접수현황</h4>
     <div class="table-wrapper">
       <table>
-        <thead>
-          <tr>
-            <th>업종</th>
-            <th>건수</th>
-          </tr>
-        </thead>
+        <thead><tr><th>업종</th><th>건수</th></tr></thead>
         <tbody>
           <tr><td>가스</td><td>3</td></tr>
           <tr><td>건설</td><td>6</td></tr>
@@ -335,12 +298,7 @@
     <h4>유형별 접수현황</h4>
     <div class="table-wrapper">
       <table>
-        <thead>
-          <tr>
-            <th>유형</th>
-            <th>건수</th>
-          </tr>
-        </thead>
+        <thead><tr><th>유형</th><th>건수</th></tr></thead>
         <tbody>
           <tr><td>행정 지원</td><td>38</td></tr>
           <tr><td>제도 개선</td><td>60</td></tr>
@@ -350,15 +308,15 @@
         </tbody>
       </table>
     </div>
-
   </main>
 
+  <!-- 4) Footer -->
   <footer>
     <p><a href="index.html">← 메인 페이지로 돌아가기</a></p>
   </footer>
 
+  <!-- 5) 탭 전환 스크립트 -->
   <script>
-    // 탭 전환 스크립트
     document.querySelectorAll('.tabs button').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
