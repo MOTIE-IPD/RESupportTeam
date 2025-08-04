@@ -71,6 +71,16 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
+@font-face {
+  font-family: 'SeoulNamsan';
+  src: url('/assets/fonts/SeoulNamsanEB.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'SeoulNamsanEB', sans-serif;
+}
 
 /* Basic */
 
