@@ -1,0 +1,91 @@
+/* 설문 전용 스타일: Phantom 테마를 덮지 않고 보완 */
+
+/* 안내 문구 박스 스타일 */
+.intro-box {
+  max-width: 1280px;
+  margin: 0 auto 2em auto;
+  padding: 1.2em 1.5em;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 1.7;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.intro-box p {
+  margin-bottom: 1.5em;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+form .field:first-of-type {
+  margin-top: 2em;
+}
+
+form .field {
+  margin-bottom: 1.7em;
+}
+
+form label {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 0.6em;
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  font-size: 17px;
+  line-height: 1.6;
+  padding: 0.8em 1em;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 4px;
+}
+
+ul.actions.small {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.8em;
+  overflow-x: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.actions.small li {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+ul.actions.small input[type="radio"] {
+  margin-right: 0.6em;
+  transform: scale(1.1);
+}
+
+ul.actions.small label {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 모바일 대응 */
+@media screen and (max-width: 768px) {
+  ul.actions.small {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    flex-direction: column;
+  }
+
+  ul.actions.small li {
+    margin-bottom: 0.5em;
+  }
+}
