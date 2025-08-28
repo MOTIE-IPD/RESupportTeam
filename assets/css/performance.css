@@ -1,0 +1,92 @@
+/* =============================
+   컬러 팔레트 & 폰트 통일
+============================= */
+:root {
+    --main-color: #0072bc;   /* Phantom 포인트 블루 */
+    --accent-color: #f15a24; /* 보조 오렌지 */
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* 기존 색상보다 살짝 진한 톤으로 */
+}
+
+/* =============================
+   헤더 중앙 정렬 & 로고 스타일
+============================= */
+#header {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+#header .logo {
+    max-height: 70px;
+    display: block;
+    margin: 0 auto 10px;
+}
+#header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222;
+}
+
+/* =============================
+   섹션 제목 스타일
+============================= */
+#main h2 {
+    margin: 40px 0 20px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-left: 4px solid var(--main-color);
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+#main h2 i {
+    margin-right: 8px;
+    color: var(--main-color);
+}
+
+/* =============================
+   표 스타일 정리
+============================= */
+.table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-wrapper th {
+    background: #f2f2f2;
+    font-weight: 700;
+    color: #222;
+}
+.table-wrapper th,
+.table-wrapper td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+/* =============================
+   버튼 & 링크 색상 통일
+============================= */
+a, .button {
+    color: #fff;
+    background-color: var(--main-color);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+}
+a:hover, .button:hover {
+    background-color: var(--accent-color);
+}
+
+/* =============================
+   반응형 대응
+============================= */
+@media screen and (max-width: 768px) {
+    #main h2 {
+        font-size: 1.2rem;
+    }
+}

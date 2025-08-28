@@ -3367,6 +3367,8 @@ body {
 }
 
 
+
+
 /* Wrapper */
 
 	#wrapper > * > .inner {
@@ -3390,7 +3392,7 @@ body {
   left: auto;             /* 왼쪽 위치 해제 */
   right: -250px;          /* 화면 밖 오른쪽으로 숨김 */
   width: 250px;
-  background: #0072bc;    /* 메뉴 백그라운드(Phantom 폼 색상) */
+  background: #585858;    /* 메뉴 백그라운드(Phantom 폼 색상) */
   transition: right 0.5s ease;
 }
 
