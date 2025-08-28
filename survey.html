@@ -321,7 +321,7 @@
             </div>
 
             <!-- 감사페이지 리다이렉트 -->
-            <input type="hidden" name="_next" value="thank-you.html" />
+            <input type="hidden" name="_next" value="thanks.html" />
 
             <!-- 스팸봇 허니팟 -->
             <input type="text" name="_gotcha" style="display:none" />
@@ -332,6 +332,31 @@
               </li>
             </ul>
           </form>
+          <script>
+            document.getElementById('surveyForm').addEventListener('submit', async function(e) {
+             e.preventDefault(); // 기본 제출 막기
+              const form = e.target;
+              const data = new FormData(form);
+
+            try {
+              const resp = await fetch(form.action, {
+               method: 'POST',
+               body: data,
+                headers: { 'Accept': 'application/json' }
+              });
+
+             if (resp.ok) {
+           // 제출 성공 → 내가 만든 완료 페이지로 이동
+                window.location.href = 'thanks.html';
+           } else {
+              alert('제출 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
+           }
+           } catch (err) {
+                console.error(err);
+              alert('네트워크 오류가 발생했습니다.');
+           }
+          });
+          </script>
 
           <p>
             추가 문의사항 등이 있으시면 아래 연락처로 의견을 보내주세요.<br />
